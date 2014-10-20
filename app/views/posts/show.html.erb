@@ -1,13 +1,23 @@
-<p id="notice"><%= notice %></p>
+<% if notice.present? %>
+<p class="alert alert-info">
+	<%= notice %>
+</p>
+<% end %>
 
-<p>
+<h2>
   <strong>Title:</strong>
   <%= @post.title %>
-</p>
+</h2>
 
-<p>
+<h2>
   <strong>Content:</strong>
   <%= @post.content %>
+</h2>
+
+<p>
+	<div class="text-muted">
+	posted on <%= @post.created_at.to_formatted_s(:long) %>
+	</div>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
