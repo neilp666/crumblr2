@@ -1,0 +1,27 @@
+<h2>
+  <strong>Title:</strong>
+  <%= link_to post.title, post %>
+  <div class="pull-right">
+  	<%= form_for(Heart.new) do |f| %>
+  	<%= f.hidden_field :post_id, value: post.id %>
+  	<%= f.submit "<3" %>
+  	<% end %>
+  </div>
+</h2>
+
+<h2>
+  <strong>Content:</strong>
+  <%= post.content %>
+</h2>
+
+<p>
+	<div class="text-muted">
+	posted on <%= post.created_at.to_formatted_s(:long) %>
+	</div>
+
+	<div class="pull-right">
+		<small>
+			<%= post.hearts.count %> hearts
+		</small>
+	</div>
+</p>

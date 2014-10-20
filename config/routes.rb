@@ -1,6 +1,7 @@
 Crumblr2::Application.routes.draw do
 
   resources :posts
+  resources :hearts, only: :create
 
   root 'pages#home'
 

@@ -3,5 +3,6 @@ class PagesController < ApplicationController
   end
 
   def home
+  	@posts = Post.all
   end
 end
